@@ -1,11 +1,81 @@
 .App {
-  text-align: center;
+  
+  box-sizing: border-box;
+
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sr-only{
+  margin-top: 20px; 
+
 }
+.login-position{
+  max-width: 75%;
+  padding-top: 200px;
+  
+  margin: auto;
+
+}
+
+.Camera-position{
+  max-width: 75%;
+  max-height: 100%;
+  padding-top: 50px;
+  
+  margin: auto;
+}
+
+.Signup-position{
+  max-width: 350px;
+  padding-top: 200px;
+  
+  margin: auto;
+
+}
+
+.btn-block {
+  margin-top: 20px;
+
+}
+
+.header{
+  width: 100%;
+  height: 50px;
+  
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+
+}
+
+.top-bar{
+  padding-left: 20px;  
+  font-size: 15px;
+  color: rgba(66, 66, 66, 0.993);
+}
+
+.left{
+  width: 80%;
+  height: 500px;
+  background-color: blue;
+  float: left;
+}
+.right{
+  width: 20%;
+  height: 500px;
+  background-color: cornflowerblue;
+  float:left;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: grey;
+  clear:both;
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
