@@ -69,8 +69,7 @@ function Picture(){
       console.log(ex);
     }
   };
-
-
+  
     return(
 
     <div className=".login Camera-position">
@@ -95,13 +94,15 @@ function Picture(){
               className={classes.input}
               id="icon-button-file camera"
               type="file"
-              capture="user"
-              onChange={(e) => handleCapture(e.target)
-              // <input type="file" onChange={saveFile} />
-              }
+              // capture="user"
+              // onChange={(e) => handleCapture(e.target)                
+              // }
+               onChange={saveFile}
             />
-            <button onClick={uploadFile}>Upload</button>
+            <button onClick={uploadFile}>Upload</button>            
           </div>
+            
+
 
           <label htmlFor="icon-button-file">
             <IconButton
@@ -109,6 +110,12 @@ function Picture(){
               aria-label="upload picture"
               component="span"
             >
+              <div className="upload">
+                <img src={require('../images/tony-pham-FUmDe-Bx1LA-unsplash.jpg') } />
+
+              </div>
+
+            
               <PhotoCameraRoundedIcon fontSize="large" color="primary" />
             </IconButton>
           </label>
