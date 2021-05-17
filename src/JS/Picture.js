@@ -17,6 +17,12 @@ function Picture(){
     // const [state, setState] = useState(null);
     // console.log(state);
 
+    const [fileinput, setFileinput] = useState({
+      file : '',
+      previewURL : ''
+    });
+    
+
     const useStyles = makeStyles((theme) => ({
                         root: {
                             height: "100%",
@@ -64,18 +70,52 @@ function Picture(){
       const res = await axios.post(
         "http://localhost:3002/upload", formData
       );
+      const res2 = await axios.get(
+        "http://f15cb16e393e.ngrok.io", formData
+      );
+
+      const res3 = await axios.post('/l', { userId : 'd', userPassword : 'a' }).then(
+        function (response) { console.log('cc') })
+        .catch(error => { console.log('error : ',error.response) });
+
+
       console.log(res);
+      console.log(res2);
+      console.log(res3);
     } catch (ex) {
       console.log(ex);
     }
   };
+
+  // ----------------------------------------------------------------------
   
+const handleFileOnChange = (event) =>{
+  event.preventDefault();
+  let reader = new FileReader();
+  let file = event.target.files[0];
+  reader.onloadend = () => {
+    setFileinput({
+      file : file,
+      previewURL : reader.result
+    })
+      
+    }
+    reader.readAsDataURL(file);
+  
+}
+
     return(
 
     <div className=".login Camera-position">
 
 
-    <div className={classes.root}>
+      <div>
+        <input type = 'file' accept = 'image/*;capture=camera' name = 'profile_img' onChange={handleFileOnChange}>
+
+        </input>
+      </div>
+
+      <div className={classes.root}>
         <Grid container>
             <Grid item xs={12}>
           <h5>Capture your image</h5>
@@ -94,10 +134,19 @@ function Picture(){
               className={classes.input}
               id="icon-button-file camera"
               // capture="user"
-              onChange={(e) => handleCapture(e.target)                
-              }
-              //  onChange={saveFile}
+              // onChange={(e) => {handleCapture(e.target);
+              //   const saveFile = (e) => {
+              //     setFile(e.target.files[0]);
+              //     setFileName(e.target.files[0].name);
+              //   };
+              // }}
+               onChange={saveFile}
             />
+
+{/* const saveFile = (e) => {
+    setFile(e.target.files[0]);
+    setFileName(e.target.files[0].name);
+  }; */}
             <button onClick={uploadFile}>Upload</button>            
           </div>
             
