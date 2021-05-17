@@ -86,35 +86,31 @@ function Picture(){
 
             {/* <input type="file" accept="image/*;capture=camera" id = "camera"></input> */}
 
-            
 
           <div className="upload">
             <input
+              type="file"
               accept="image/*;capture=camera"
               className={classes.input}
               id="icon-button-file camera"
-              type="file"
               // capture="user"
-              // onChange={(e) => handleCapture(e.target)                
-              // }
-               onChange={saveFile}
+              onChange={(e) => handleCapture(e.target)                
+              }
+              //  onChange={saveFile}
             />
             <button onClick={uploadFile}>Upload</button>            
           </div>
             
-
-
           <label htmlFor="icon-button-file">
             <IconButton
               color="primary"
               aria-label="upload picture"
               component="span"
             >
-              <div className="upload">
+              {/* <div className="upload">
                 <img src={require('../images/tony-pham-FUmDe-Bx1LA-unsplash.jpg') } />
 
-              </div>
-
+              </div> */}
             
               <PhotoCameraRoundedIcon fontSize="large" color="primary" />
             </IconButton>
@@ -123,12 +119,6 @@ function Picture(){
       </Grid>
     </div>
   
-                
-        
-      
-        
-
-        
         
     </div>
     );

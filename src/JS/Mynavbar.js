@@ -13,21 +13,21 @@ function Mynavbar(){
           <Nav.Item>
           <Link to="/Album">
           <div>
-          <Nav.Link eventKey="link-1" as={Link} to="/Album">Album</Nav.Link>
+          <Nav.Link eventKey="link-1" as={Link} to="/Album">앨범</Nav.Link>
           </div>
           </Link>          
           </Nav.Item>
           <Nav.Item>
           <Link to="/Music">
             <div>
-            <Nav.Link eventKey="link-2" as={Link} to="/Music">Music</Nav.Link>
+            <Nav.Link eventKey="link-2" as={Link} to="/Music">음악</Nav.Link>
             </div>
           </Link>
           </Nav.Item>
           <Nav.Item>
           <Link to="/Picture">
             <div>
-            <Nav.Link eventKey="link-3" as={Link} to="/Picture">Picture</Nav.Link>
+            <Nav.Link eventKey="link-3" as={Link} to="/Picture">사진</Nav.Link>
             </div>
           </Link>
           </Nav.Item>
