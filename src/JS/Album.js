@@ -10,7 +10,6 @@ import $ from 'jquery';
 function Album(){
 
 
-
     return(
 
 

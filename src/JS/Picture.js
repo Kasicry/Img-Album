@@ -20,6 +20,12 @@ function Picture(){
     });
     
 
+    const [fileinput, setFileinput] = useState({
+      file : '',
+      previewURL : ''
+    });
+    
+
     const useStyles = makeStyles((theme) => ({
                         root: {
                             height: "100%",
