@@ -8,16 +8,23 @@ function Login(){
         
         <div className="login login-position">
 
+          
+
           <Jumbotron className="Login-background">
             <Container>
-              <h1>Fluid jumbotron</h1>
+              <h1></h1>
               <p>
-                This is a modified jumbotron that occupies the entire horizontal space of
-                its parent.
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
               </p>
             </Container>
           </Jumbotron>
-
+          
           <form className="form-signin">
               <h2 className="form-signin-heading">  </h2>
               <label for="inputID" className="btn-block"> </label>
@@ -26,6 +33,8 @@ function Login(){
               
               <label for="inputPassword" className="btn-block"></label>
               <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
+
+              
 
               <Link  to="/Album">
                 <button className="btn btn-lg btn-primary btn-block" type="button"> Login              

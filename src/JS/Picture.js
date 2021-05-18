@@ -14,18 +14,8 @@ import axios from 'axios';
 
 function Picture(){
 
-    const [fileinput, setFileinput] = useState({
-      file : '',
-      previewURL : ''
-    });
     
-
-    const [fileinput, setFileinput] = useState({
-      file : '',
-      previewURL : ''
-    });
     
-
     const useStyles = makeStyles((theme) => ({
                         root: {
                             height: "100%",
@@ -40,26 +30,21 @@ function Picture(){
                             height: "inherit",
                             maxWidth: "inherit",
                         },
-                        //   input: {
-                        //     display: "none"
-                        //   }
+                          // input: {
+                          //   display: "none"
+                          // }
                         }));
 
-    const classes = useStyles();
-    const [source, setSource] = useState("");
-    const handleCapture = (target) => {
-        if (target.files) {
-        if (target.files.length !== 0) {
-            const file = target.files[0];
-            const newUrl = URL.createObjectURL(file);
-            setSource(newUrl);
-        }
-        }
-    };
-
+  const classes = useStyles();
+  const [source, setSource] = useState("");
+    
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
-
+  const [fileinput, setFileinput] = useState({
+    file : '',
+    previewURL : ''
+  });
+  
   const saveFile = (e) => {
     setFile(e.target.files[0]);
     setFileName(e.target.files[0].name);
@@ -69,22 +54,20 @@ function Picture(){
     const formData = new FormData();
     formData.append("file", file);
     formData.append("fileName", fileName);
+    // formData.append('test', ['hi', 'hello']);
+    // formData.get('test');
+    // console.log(formData.get('test'))
     try {
       const res = await axios.post(
         "http://localhost:3002/upload", formData
-      );
-      const res2 = await axios.get(
-        "http://f15cb16e393e.ngrok.io", formData
-      );
+      );   
 
-      const res3 = await axios.post('/l', { userId : 'd', userPassword : 'a' }).then(
-        function (response) { console.log('cc') })
-        .catch(error => { console.log('error : ',error.response) });
-
+      // const res3 = await axios.post('/l', { userId : 'd', userPassword : 'a' }).then(
+      //   function (response) { console.log('cc') })
+      //   .catch(error => { console.log('error : ',error.response) });
 
       console.log(res);
-      console.log(res2);
-      console.log(res3);
+
     } catch (ex) {
       console.log(ex);
     }
@@ -103,11 +86,9 @@ function Picture(){
       
     }
     reader.readAsDataURL(file);
-    
-    
+        
   }
   
-
   let profile_preview = null;
     if(fileinput.file !== ''){
       profile_preview = <img className='profile_preview' src={fileinput.previewURL}></img>
@@ -116,7 +97,6 @@ function Picture(){
     return(
 
     <div className=".login Camera-position">
-     
 
       <div className={classes.root}>
         <Grid container>
@@ -126,9 +106,7 @@ function Picture(){
             <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
               <img src={source} alt={"snap"} className={classes.img}></img>
             </Box>}
-
-
-
+            
           <div className="upload">
             <input
               type="file"
@@ -140,26 +118,23 @@ function Picture(){
                 saveFile(e);
                 handleFileOnChange(e);
               }}
-              // onChange={(e)=>{
-              //   handleCapture(e);
-              //   saveFile(e);
-              // }}
+
             />
 
             <button onClick={uploadFile}>Upload</button>
             {profile_preview}            
           </div>
-            
+
           <label htmlFor="icon-button-file">
             <IconButton
               color="primary"
               aria-label="upload picture"
               component="span"
-            >
-          
+            >          
               <PhotoCameraRoundedIcon fontSize="large" color="primary" />
             </IconButton>
           </label>
+
         </Grid>
       </Grid>
     </div>

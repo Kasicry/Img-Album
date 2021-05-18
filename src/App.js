@@ -50,21 +50,6 @@ function App() {
 
         <Album />
 
-         <Navbar bg="light" variant="light">        
-          <Nav className="mr-auto">
-            <Navbar.Brand href=""> 4월</Navbar.Brand>
-          </Nav>
-                  
-        </Navbar>
-
-        <Album />
-
-         <Navbar bg="light" variant="light">        
-          <Nav className="mr-auto">
-            <Navbar.Brand href=""> 3월</Navbar.Brand>
-          </Nav>
-                  
-        </Navbar>     
       </Route>
 
       <Route exact path="/Music">

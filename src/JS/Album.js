@@ -9,6 +9,13 @@ import $ from 'jquery';
 
 function Album(){
 
+  const reqSvgs = require.context ( '../images', true, /\.jpg$/  )
+  const paths = reqSvgs.keys ()
+  
+  const svgs = paths.map( path => reqSvgs ( path ) )
+
+  console.log({svgs});
+
 
     return(
 
