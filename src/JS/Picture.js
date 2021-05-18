@@ -14,8 +14,11 @@ import axios from 'axios';
 
 function Picture(){
 
-    // const [state, setState] = useState(null);
-    // console.log(state);
+    const [fileinput, setFileinput] = useState({
+      file : '',
+      previewURL : ''
+    });
+    
 
     const useStyles = makeStyles((theme) => ({
                         root: {
@@ -64,18 +67,52 @@ function Picture(){
       const res = await axios.post(
         "http://localhost:3002/upload", formData
       );
+      const res2 = await axios.get(
+        "http://f15cb16e393e.ngrok.io", formData
+      );
+
+      const res3 = await axios.post('/l', { userId : 'd', userPassword : 'a' }).then(
+        function (response) { console.log('cc') })
+        .catch(error => { console.log('error : ',error.response) });
+
+
       console.log(res);
+      console.log(res2);
+      console.log(res3);
     } catch (ex) {
       console.log(ex);
     }
   };
+
+  // ----------------------------------------------------------------------
+  const handleFileOnChange = (event) =>{
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      setFileinput({
+        file : file,
+        previewURL : reader.result
+      })
+      
+    }
+    reader.readAsDataURL(file);
+    
+    
+  }
   
+
+  let profile_preview = null;
+    if(fileinput.file !== ''){
+      profile_preview = <img className='profile_preview' src={fileinput.previewURL}></img>
+  }
+    
     return(
 
     <div className=".login Camera-position">
+     
 
-
-    <div className={classes.root}>
+      <div className={classes.root}>
         <Grid container>
             <Grid item xs={12}>
           <h5>Capture your image</h5>
@@ -84,38 +121,36 @@ function Picture(){
               <img src={source} alt={"snap"} className={classes.img}></img>
             </Box>}
 
-            {/* <input type="file" accept="image/*;capture=camera" id = "camera"></input> */}
 
-            
 
           <div className="upload">
             <input
+              type="file"
               accept="image/*;capture=camera"
               className={classes.input}
               id="icon-button-file camera"
-              type="file"
-              // capture="user"
-              // onChange={(e) => handleCapture(e.target)                
-              // }
-               onChange={saveFile}
+              name = 'profile_img' 
+              onChange={(e)=>{
+                saveFile(e);
+                handleFileOnChange(e);
+              }}
+              // onChange={(e)=>{
+              //   handleCapture(e);
+              //   saveFile(e);
+              // }}
             />
-            <button onClick={uploadFile}>Upload</button>            
+
+            <button onClick={uploadFile}>Upload</button>
+            {profile_preview}            
           </div>
             
-
-
           <label htmlFor="icon-button-file">
             <IconButton
               color="primary"
               aria-label="upload picture"
               component="span"
             >
-              <div className="upload">
-                <img src={require('../images/tony-pham-FUmDe-Bx1LA-unsplash.jpg') } />
-
-              </div>
-
-            
+          
               <PhotoCameraRoundedIcon fontSize="large" color="primary" />
             </IconButton>
           </label>
@@ -123,12 +158,6 @@ function Picture(){
       </Grid>
     </div>
   
-                
-        
-      
-        
-
-        
         
     </div>
     );

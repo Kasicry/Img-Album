@@ -74,6 +74,15 @@
   clear:both;
 }
 
+.Login-background{
+  background-image : url(/src/images/pexels-martin-damboldt-814499.jpg);
+  background-position: center;
+  color : white;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
 
 
 

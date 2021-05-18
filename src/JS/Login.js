@@ -1,12 +1,25 @@
+import { Jumbotron, Button, Navbar, Nav, Container, Form, FormControl, Row, Col } from 'react-bootstrap';
 import {Link, Route, Switch} from 'react-router-dom';
+import bridge from '../images/pexels-martin-damboldt-814499.jpg';
+import '../App.css'
 
 function Login(){
     return(
         
         <div className="login login-position">
 
+          <Jumbotron className="Login-background">
+            <Container>
+              <h1>Fluid jumbotron</h1>
+              <p>
+                This is a modified jumbotron that occupies the entire horizontal space of
+                its parent.
+              </p>
+            </Container>
+          </Jumbotron>
+
           <form className="form-signin">
-              <h2 className="form-signin-heading"> Please sign in </h2>
+              <h2 className="form-signin-heading">  </h2>
               <label for="inputID" className="btn-block"> </label>
               
               <input type="email" id="inputEmail" className="form-control" placeholder="ID" required autofocus />
