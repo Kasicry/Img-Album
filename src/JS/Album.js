@@ -50,6 +50,8 @@ function Album(props){
           </div>
 
         </div>
+
+        <p>모달창에 뮤직플레이기능을 넣기</p>
         
         <div className="row">
           {/* <div className="col-md-3">
@@ -60,7 +62,6 @@ function Album(props){
 
         {/* {반복된UI()} */}
 
-          각 이미지를 홈페이지에 표시하고 이미지를 클릭시 모달창으로 커진(원본의) 사이즈의 클릭한 이미지와 뮤직플레이기능을 넣기
           {/* <div className="imgList">
             <div className="imgC">
               <img src={require("../images/세로4.jpeg").default}  width="100%"/>
@@ -72,14 +73,7 @@ function Album(props){
             </div>            
           </div> */}
 
-          {/* <!-- 팝업 될 곳 --> */}
-          <div class="modal">
-            <button>&times;</button>
-            <div class="modalBox">
-              <img src="" alt="aa" />
-              <p></p>
-            </div>
-          </div>
+          
         
           {
             
@@ -100,6 +94,15 @@ function Album(props){
             }
             )
           }
+
+          {/* <!-- 팝업 될 곳 --> */}
+          <div class="modal">
+            <button>&times;</button>
+            <div class="modalBox">
+              <img src="" alt="aa" />
+              <p></p>
+            </div>
+          </div>
 
         </div>
       </div>        
