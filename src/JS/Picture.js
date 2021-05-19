@@ -93,7 +93,7 @@ function Picture(){
     if(fileinput.file !== ''){
       profile_preview = <img className='profile_preview' src={fileinput.previewURL}></img>
   }
-    
+
     return(
 
     <div className=".login Camera-position">
@@ -138,8 +138,6 @@ function Picture(){
         </Grid>
       </Grid>
     </div>
-  
-        
     </div>
     );
 

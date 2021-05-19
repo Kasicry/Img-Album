@@ -1,84 +1,57 @@
-import { Navbar, Nav, Container, Form, FormControl, Row, Col, Button, Modal } from 'react-bootstrap';
-import benjamin from '../images/benjamin-wedemeyer-l-BPJHKGjsk-unsplash.jpg';
-import krismas from '../images/krismas-unUkmr0NF8Q-unsplash.jpg';
-import wenhao from '../images/wenhao-ryan-txuo6oDDDEM-unsplash.jpg';
-
+import {Button, Modal } from 'react-bootstrap';
 import React, { useState } from "react";
-import axios from "axios";
 import $ from 'jquery';
+import ImageZoom from 'react-medium-image-zoom';
+import "../Album.css"
 
 
+function Album(props){
 
-function Album(){
-
-  const [name, setname] = useState([
-    require(
-      "../images/세로4.jpeg").default,
-      require( "../images/세로3.jpeg").default, 
-      require( "../images/세로1.jpg").default,
-      require( "../images/세로2.jpeg").default,
-      require( "../images/세로5.jpeg").default,
-      require( "../images/세로6.jpeg").default,
-      require( "../images/세로7.jpeg").default,
-      require( "../images/세로8.jpeg").default,
-      require( "../images/benjamin-wedemeyer-l-BPJHKGjsk-unsplash.jpg").default,
-      require( "../images/krismas-unUkmr0NF8Q-unsplash.jpg").default,
-      require( "../images/wenhao-ryan-txuo6oDDDEM-unsplash.jpg").default,
-      require( "../images/pexels-martin-damboldt-814499.jpg").default,
-  ]    
-  );
-
-  console.log({name})
-
-  function Example() {
-    const [show, setShow] = useState(false);
-  
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    
-    return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
-  
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  }
-
-  function 반복된UI(){
-
-    var 어레이 = [];
-    for(var i =0; i< 3; i++){
-      어레이.push(<div>안녕</div>);
+  $(function(){
+    // 	이미지 클릭시 해당 이미지 모달
+      $(".imgC").click(function(){
+        $(".modal").show();
+        // 해당 이미지 가겨오기
+        var imgSrc = $(this).children("img").attr("src");
+        var imgAlt = $(this).children("img").attr("alt");
+        $(".modalBox img").attr("src", imgSrc);
+        $(".modalBox img").attr("alt", imgAlt);
+        
+        // 해당 이미지 텍스트 가져오기
+        // var imgTit =  $(this).children("p").text();
+        // $(".modalBox p").text(imgTit);
+        
+       // 해당 이미지에 alt값을 가져와 제목으로
+        $(".modalBox p").text(imgAlt);
+      });
       
-    }
-    
-    return 어레이;
-  }
-
-
-  
+      //.modal안에 button을 클릭하면 .modal닫기
+      $(".modal button").click(function(){
+        $(".modal").hide();
+      });
+      
+      //.modal밖에 클릭시 닫힘
+      $(".modal").click(function (e) {
+        if (e.target.className != "modal") {
+          return false;
+        } else {
+          $(".modal").hide();
+        }
+      });
+    });
 
     return(
 
-      <div className="container">          
+      <div className="container">         
+
+        <div className="black-background" >
+          <div className="white-background">
+
+          </div>
+
+        </div>
         
-        <div className="row" >
+        <div className="row">
           {/* <div className="col-md-3">
             <img src={require("../images/benjamin-wedemeyer-l-BPJHKGjsk-unsplash.jpg").default} width="100%" />
             <h4>작가</h4>
@@ -86,61 +59,53 @@ function Album(){
           </div> */}
 
         {/* {반복된UI()} */}
-        {/* {Example()} */}
+
+          각 이미지를 홈페이지에 표시하고 이미지를 클릭시 모달창으로 커진(원본의) 사이즈의 클릭한 이미지와 뮤직플레이기능을 넣기
+          {/* <div className="imgList">
+            <div className="imgC">
+              <img src={require("../images/세로4.jpeg").default}  width="100%"/>
+              <p>이미지 1</p>
+            </div>
+            <div className="imgC">
+              <img src={require("../images/세로3.jpeg").default} width="100%" />
+              <p>이미지 2</p>
+            </div>            
+          </div> */}
+
+          {/* <!-- 팝업 될 곳 --> */}
+          <div class="modal">
+            <button>&times;</button>
+            <div class="modalBox">
+              <img src="" alt="aa" />
+              <p></p>
+            </div>
+          </div>
+        
           {
-            name.map(function(a){
+            
+            props.name.map(function(a){              
+                        console.log(a)
               return(
-                <div className="col-md-3">
-                <img src={a} width="100%" />
-                <h4></h4>
-                <p></p>
-              </div>
+                <div className="col-md-3 col-mg imgC">
+                  
+                    <img 
+                    src={a}
+                    width="100%"
+                    // onClick=
+                     />
+                  
+                </div>
 
               )
             }
-            )}
-
-            
-
-            
-          
-          
-         
+            )
+          }
 
         </div>
       </div>        
     );
 }
 
-// function Example() {
-//   const [show, setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-
-//   return (
-//     <>
-//       <Button variant="primary" onClick={handleShow}>
-//         Launch demo modal
-//       </Button>
-
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Modal heading</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//         <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           <Button variant="primary" onClick={handleClose}>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   );
-// }
 
 export default Album;
 

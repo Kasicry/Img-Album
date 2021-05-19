@@ -1,6 +1,5 @@
 .App {  
-  box-sizing: border-box;
-  
+  box-sizing: border-box;  
 }
 
 .sr-only{
@@ -78,14 +77,37 @@
 
 .Login-background{
   background-image : url(/src/images/pexels-martin-damboldt-814499.jpg);
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  color : white;
+  background-size: cover;  
+  overflow: hidden;
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
+  
   
 }
 
+.Music-background{
+  background-image : url(/src/images/melon.jpg);  
+  background-position: center;
+  background-size: cover;  
+  overflow: hidden;
+  width: 500px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;  
+  
+}
+
+.Music-center{
+  margin: auto;  
+  
+}
+
+.table-position{
+  margin-top: 25px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

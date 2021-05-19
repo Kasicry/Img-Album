@@ -10,20 +10,23 @@ function Login(){
 
           
 
-          <Jumbotron className="Login-background">
-            <Container>
-              <h1></h1>
-              <p>
+          <div className="Login-background">
+            
+                <br />
+                <br />
+                <br />                            
                 <br />
                 <br />
                 <br />
                 <br />
                 <br />
+                <br />                
                 <br />
                 <br />
-              </p>
-            </Container>
-          </Jumbotron>
+                <br />
+                <br />              
+            
+          </div>
           
           <form className="form-signin">
               <h2 className="form-signin-heading">  </h2>
