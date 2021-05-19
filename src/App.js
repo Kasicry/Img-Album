@@ -3,7 +3,6 @@ import { Button, Navbar, Nav, Container, Form, FormControl, Row, Col } from 'rea
 import benjamin from '../src/images/benjamin-wedemeyer-l-BPJHKGjsk-unsplash.jpg';
 import krismas from '../src/images/krismas-unUkmr0NF8Q-unsplash.jpg';
 import wenhao from '../src/images/wenhao-ryan-txuo6oDDDEM-unsplash.jpg';
-import tony from '../src/images/tony-pham-FUmDe-Bx1LA-unsplash.jpg';
 import {Link, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Login from './JS/Login';
@@ -43,28 +42,13 @@ function App() {
 
         <Navbar bg="light" variant="light">        
           <Nav className="mr-auto">
-            <Navbar.Brand href=""> 5월</Navbar.Brand>
+            <Navbar.Brand href="">Did you take a beautiful picture? <img src={require("./images/99A783505D15071406.png").default} width="100%" className="title-image" /> </Navbar.Brand>
           </Nav>
                   
         </Navbar>
 
         <Album />
 
-         <Navbar bg="light" variant="light">        
-          <Nav className="mr-auto">
-            <Navbar.Brand href=""> 4월</Navbar.Brand>
-          </Nav>
-                  
-        </Navbar>
-
-        <Album />
-
-         <Navbar bg="light" variant="light">        
-          <Nav className="mr-auto">
-            <Navbar.Brand href=""> 3월</Navbar.Brand>
-          </Nav>
-                  
-        </Navbar>     
       </Route>
 
       <Route exact path="/Music">

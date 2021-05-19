@@ -2,6 +2,12 @@ import {Link, Route, Switch} from 'react-router-dom';
 import { Button, Navbar, Nav, Container, Form, FormControl, Row, Col } from 'react-bootstrap';
 
 function Signup(){
+
+  const btnstyle={   
+    
+    marginLeft: "25px"
+}  
+
     return(
         
         <div className="Signup-position">
@@ -26,36 +32,7 @@ function Signup(){
           <Form.Group controlId="formGridPhone">
             <Form.Label>Phone Number</Form.Label>
             <Form.Control placeholder="ex ) 010-0000-0000" />
-          </Form.Group>
-
-          {/* <Form.Group controlId="formGridAddress2">
-            <Form.Label>Address 2</Form.Label>
-            <Form.Control placeholder="Apartment, studio, or floor" />
-          </Form.Group> */}
-
-          {/* <Form.Row>
-            <Form.Group as={Col} controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridState">
-              <Form.Label>State</Form.Label>
-              <Form.Control as="select" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option>...</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control />
-            </Form.Group>
-          </Form.Row> */}
-
-          {/* <Form.Group id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
+          </Form.Group>       
 
           <Link to="/">
             <Button variant="primary" type="submit">
@@ -63,10 +40,8 @@ function Signup(){
             </Button>
           </Link>
 
-
-
           <Link to="/">
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="btn-submit" style={btnstyle}>
                 Cancel
             </Button>
           </Link>
