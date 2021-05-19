@@ -1,8 +1,5 @@
 import { Table } from 'react-bootstrap';
 
-
-
-
 function Music(){
     return(
 

@@ -2,6 +2,9 @@
   box-sizing: border-box;  
 }
 
+.mr-auto{
+  margin: auto;
+}
 .sr-only{
   margin-top: 20px; 
 
@@ -9,6 +12,7 @@
 .login-position{
   max-width: 75%;
   padding-top: 100px;
+  min-width: 500px;
   
   margin: auto;
 
