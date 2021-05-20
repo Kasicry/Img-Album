@@ -93,7 +93,7 @@ function Picture(){
     if(fileinput.file !== ''){
       profile_preview = <img className='profile_preview' src={fileinput.previewURL}></img>
   }
-    
+
     return(
 
     <div className=".login Camera-position">
@@ -114,14 +114,20 @@ function Picture(){
               className={classes.input}
               id="icon-button-file camera"
               name = 'profile_img' 
+              
               onChange={(e)=>{
                 saveFile(e);
                 handleFileOnChange(e);
-              }}
+              
+              }
+              
+            }
 
             />
+            <br />
 
             <button onClick={uploadFile}>Upload</button>
+            <br />
             {profile_preview}            
           </div>
 
@@ -138,8 +144,6 @@ function Picture(){
         </Grid>
       </Grid>
     </div>
-  
-        
     </div>
     );
 

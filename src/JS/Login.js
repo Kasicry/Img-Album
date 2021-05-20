@@ -10,21 +10,25 @@ function Login(){
 
           
 
-          <Jumbotron className="Login-background">
-            <Container>
-              <h1></h1>
-              <p>
+          <div className="Login-background">            
+                <br />
+                <br />
+                <br />                            
                 <br />
                 <br />
                 <br />
                 <br />
                 <br />
+                <br />                
                 <br />
                 <br />
-              </p>
-            </Container>
-          </Jumbotron>
-          
+                <br />
+                <br />              
+            
+          </div>
+
+                <br />
+                <br />          
           <form className="form-signin">
               <h2 className="form-signin-heading">  </h2>
               <label for="inputID" className="btn-block"> </label>
@@ -33,8 +37,6 @@ function Login(){
               
               <label for="inputPassword" className="btn-block"></label>
               <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-
-              
 
               <Link  to="/Album">
                 <button className="btn btn-lg btn-primary btn-block" type="button"> Login              

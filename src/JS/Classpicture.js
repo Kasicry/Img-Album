@@ -17,9 +17,9 @@ const onchange = (e) => {
   }
   
 
-  // useEffect(() => 
-  // [{values}]
-  // );
+  useEffect(() => 
+  [{values}]
+  );
 
   const picture = (e) => {
     e.preventDefault();
