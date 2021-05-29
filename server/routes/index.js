@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 
-    res.send({greeting:'Heo React x Node.js'});
+    res.send({greeting:'Hello React x Node.js'});
 
 });
 
